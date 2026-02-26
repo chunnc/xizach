@@ -4,6 +4,10 @@ button, a, [role="button"] {
   -webkit-tap-highlight-color: transparent;
 }
 
+* {
+  scroll-behavior: auto !important;
+}
+
 /* ── App Layout ── */
 .app-container {
   height: 100vh;
@@ -66,7 +70,8 @@ button, a, [role="button"] {
   flex: 1;
   min-height: 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
+  overscroll-behavior: none;
 }
 
 .empty-state {
