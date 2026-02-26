@@ -28,6 +28,7 @@ Built with **React + TypeScript + Vite**.
 | Build tool | Vite 7 |
 | Icons | lucide-react |
 | Persistence | localStorage (custom `useLocalStorage` hook) |
+| PWA | vite-plugin-pwa + Workbox |
 
 ---
 
@@ -74,6 +75,19 @@ npm run build
 # Preview production build
 npm run preview
 ```
+
+---
+
+## PWA
+
+This app is a fully installable Progressive Web App:
+
+- **Offline support** — all assets are pre-cached by a Workbox service worker
+- **Installable** — add to home screen on iOS and Android
+- **Auto-update** — the service worker auto-updates when a new build is deployed
+- **Standalone** — launches without browser chrome, portrait orientation
+
+> PWA features are only active in the **production build** (`npm run build && npm run preview`). The dev server does not register a service worker.
 
 ---
 
