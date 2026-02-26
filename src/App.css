@@ -1,3 +1,9 @@
+/* ── Global touch fix ── */
+button, a, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ── App Layout ── */
 .app-container {
   height: 100vh;
@@ -213,6 +219,9 @@
   color: #e5e7eb;
   cursor: pointer;
   transition: background 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .btn:hover {
@@ -359,6 +368,9 @@
   font-family: inherit;
   line-height: 1;
   padding: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .score-step-btn:hover {
@@ -448,6 +460,9 @@
   cursor: pointer;
   text-align: left;
   transition: background 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .options-menu-item:hover {
@@ -477,6 +492,9 @@
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
   text-align: left;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .player-select-item:hover {
