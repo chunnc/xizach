@@ -1,0 +1,499 @@
+/* ── App Layout ── */
+.app-container {
+  height: 100vh;
+  background: #111827;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.app-logo {
+  height: 2.4rem;
+  width: auto;
+  display: block;
+}
+
+.app-header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #facc15;
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.app-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.app-main {
+  width: 100%;
+  max-width: 780px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+/* ── Table Wrapper ── */
+.table-wrapper {
+  background: #1f2937;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  -webkit-overflow-scrolling: touch;
+}
+
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  padding: 2.5rem 1rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── Score Table ── */
+.score-table {
+  width: 100%;
+  min-width: max-content;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.score-table th,
+.score-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #374151;
+}
+
+.score-table thead tr {
+  background: #111827;
+}
+
+.score-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #111827;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #60a5fa;
+}
+
+.col-dealer {
+  background: #1e3a5f !important;
+  color: #93c5fd !important;
+}
+
+.dealer-badge {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #facc15;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.15rem;
+}
+
+.col-round {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #1f2937;
+  color: #6b7280 !important;
+  font-size: 0.85rem !important;
+  width: 60px;
+}
+
+.score-table thead .col-round {
+  background: #111827;
+  z-index: 4;
+}
+
+.score-table tfoot .col-round {
+  background: #1a2535;
+  z-index: 4;
+}
+
+.score-table tbody tr {
+  transition: background 0.15s;
+}
+
+.score-table tbody tr:hover {
+  background: #263044;
+}
+
+.col-score {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+
+/* ── Total Row ── */
+.score-table tfoot tr {
+  background: #1a2535;
+}
+
+.score-table tfoot td {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  background: #1a2535;
+  border-top: 2px solid #4b5563;
+}
+
+.total-label {
+  font-weight: 700;
+  color: #facc15 !important;
+  font-size: 0.9rem !important;
+}
+
+.total-score {
+  font-size: 1.1rem !important;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.top-score {
+  color: #22c55e !important;
+}
+
+.top-score::after {
+  content: ' 👑';
+  font-size: 0.8rem;
+}
+
+/* ── Action Bar (fixed bottom) ── */
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0;
+  padding: 0 0 env(safe-area-inset-bottom, 0px);
+  background: #1f2937;
+  border-top: 1px solid #374151;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 52px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: #1f2937;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: #374151;
+}
+
+.btn:active {
+  background: #4b5563;
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+
+/* ── Dialogs ── */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.dialog-box {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dialog-message {
+  color: #f3f4f6;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.dialog-input {
+  background: #111827;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 0.95rem;
+  font-family: inherit;
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dialog-input:focus {
+  border-color: #2563eb;
+}
+
+.dialog-input::placeholder {
+  color: #4b5563;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+/* ── Input Score Dialog ── */
+.input-score-dialog {
+  max-width: 460px;
+}
+
+.score-input-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.score-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid #374151;
+}
+
+.score-input-row--dealer {
+}
+
+.score-input-row--dealer .score-step-btn {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+
+.score-input-row:last-child {
+  border-bottom: none;
+}
+
+.score-input-name {
+  flex: 1;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-input-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.score-step-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.score-step-btn:hover {
+  filter: brightness(1.2);
+}
+
+.step-minus {
+  background: #7f1d1d;
+  color: #fca5a5;
+}
+
+.step-plus {
+  background: #14532d;
+  color: #86efac;
+}
+
+.score-input-value {
+  min-width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.dialog-actions .btn {
+  width: auto;
+  height: auto;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.dialog-actions .btn-ghost {
+  background: #374151;
+  color: #d1d5db;
+  border: 1px solid #4b5563;
+}
+
+.dialog-actions .btn-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.dialog-actions .btn-danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* ── Options anchor + popover ── */
+.options-anchor {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.options-anchor .btn {
+  flex: 1;
+}
+
+.options-menu {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  min-width: 160px;
+  z-index: 50;
+}
+
+.options-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.options-menu-item:hover {
+  background: #374151;
+}
+
+/* ── Swap Dealer player list ── */
+.player-select-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.player-select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background: #111827;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  text-align: left;
+}
+
+.player-select-item:hover {
+  background: #1e3a5f;
+  border-color: #2563eb;
+}
+
+.player-select-item--active {
+  background: #1e3a5f;
+  border-color: #2563eb;
+  color: #93c5fd;
+}
+
+.dealer-badge-inline {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #facc15;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 0.15rem 0.4rem;
+  background: rgba(250, 204, 21, 0.1);
+  border-radius: 4px;
+}
+
