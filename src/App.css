@@ -12,6 +12,7 @@ button, a, [role="button"] {
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem 0;
+  padding-bottom: calc(52px + 32px);
   font-family: 'Segoe UI', system-ui, sans-serif;
   box-sizing: border-box;
 }
@@ -54,7 +55,6 @@ button, a, [role="button"] {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  padding-bottom: calc(52px + 16px + 1rem);
 }
 
 /* ── Table Wrapper ── */
@@ -87,7 +87,7 @@ button, a, [role="button"] {
 
 .score-table th,
 .score-table td {
-  padding: 0.75rem 1rem;
+  padding: 0.35rem 0.6rem;
   text-align: center;
   border-bottom: 1px solid #374151;
 }
@@ -101,7 +101,7 @@ button, a, [role="button"] {
   top: 0;
   z-index: 2;
   background: #111827;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -129,8 +129,8 @@ button, a, [role="button"] {
   z-index: 1;
   background: #1f2937;
   color: #6b7280 !important;
-  font-size: 0.85rem !important;
-  width: 60px;
+  font-size: 0.7rem !important;
+  width: 48px;
 }
 
 .score-table thead .col-round {
@@ -152,7 +152,7 @@ button, a, [role="button"] {
 }
 
 .col-score {
-  font-size: 1.05rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #e5e7eb;
 }
@@ -174,11 +174,11 @@ button, a, [role="button"] {
 .total-label {
   font-weight: 700;
   color: #facc15 !important;
-  font-size: 0.9rem !important;
+  font-size: 0.75rem !important;
 }
 
 .total-score {
-  font-size: 1.1rem !important;
+  font-size: 0.9rem !important;
   font-weight: 700;
   color: #facc15;
 }
